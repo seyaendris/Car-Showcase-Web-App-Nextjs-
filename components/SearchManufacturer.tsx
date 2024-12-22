@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { Fragment, useState } from "react";
-import { Combobox, ComboboxButton, ComboboxInput, ComboboxOptions, Transition } from "@headlessui/react";
+import { Combobox, ComboboxButton, ComboboxInput, ComboboxOption, ComboboxOptions, Transition } from "@headlessui/react";
 
 import { manufacturers } from "@/constants";
 import { SearchManuFacturerProps } from "@/types";
@@ -57,15 +57,15 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManuFacture
               static
             >
               {filteredManufacturers.length === 0 && query !== "" ? (
-                <ComboboxOptions
+                <ComboboxOption
                   value={query}
                   className='search-manufacturer__option'
                 >
                   Create "{query}"
-                </ComboboxOptions>
+                </ComboboxOption>
               ) : (
                 filteredManufacturers.map((item) => (
-                  <ComboboxOptions
+                  <ComboboxOption
                     key={item}
                     className={({ active }) =>
                       `relative search-manufacturer__option ${
@@ -87,7 +87,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManuFacture
                         ) : null}
                       </>
                     )}
-                  </ComboboxOptions>
+                  </ComboboxOption>
                 ))
               )}
             </ComboboxOptions>
