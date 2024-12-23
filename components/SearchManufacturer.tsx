@@ -24,7 +24,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManuFacture
   return (
     <div className='search-manufacturer'>
       <Combobox value={manufacturer} onChange={setManufacturer}>
-        <div className='relative w-full'>
+        <div className='w-full relative'>
           {/* Button for the combobox. Click on the icon to see the complete dropdown */}
           <ComboboxButton className='absolute top-[14px]'>
             <Image
@@ -54,7 +54,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManuFacture
           >
             <ComboboxOptions
               className='absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'
-              static
+              
             >
               {filteredManufacturers.length === 0 && query !== "" ? (
                 <ComboboxOption
@@ -67,14 +67,10 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManuFacture
                 filteredManufacturers.map((item) => (
                   <ComboboxOption
                     key={item}
-                    className={({ active }) =>
-                      `relative search-manufacturer__option ${
-                        active ? "bg-primary-blue text-white" : "text-gray-900"
-                      }`
-                    }
+                    className="data-[focus]:bg-blue-100 py-2 px-4 cursor-pointer"
                     value={item}
                   >
-                    {({ selected, active }) => (
+                    {({ selected }) => (
                       <>
                         <span className={`block truncate ${selected ? "font-medium" : "font-normal"}`}>
                           {item}
@@ -82,7 +78,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManuFacture
 
                         {/* Show an active blue background color if the option is selected */}
                         {selected ? (
-                          <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active? "text-white": "text-pribg-primary-purple"}`}
+                          <span className="data-[focus]:bg-blue-100"
                           ></span>
                         ) : null}
                       </>
