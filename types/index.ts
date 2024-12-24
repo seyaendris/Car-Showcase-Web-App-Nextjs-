@@ -14,3 +14,8 @@ export interface CustomButtonProps {
     manufacturer: string;
     setManufacturer: (manufacturer: string) => void;
   }
+
+  export interface CustomFilterProps {
+    title: string;
+    options: OptionProps[];
+  }
