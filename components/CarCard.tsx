@@ -1,6 +1,7 @@
 "use client"
 
 import { CarProps } from '@/types'
+import { calculateCarRent } from '@/utils';
 import React from 'react'
 
 interface CarCardProps {
@@ -9,7 +10,7 @@ interface CarCardProps {
 
 const CarCard = ({ car }: CarCardProps) => {
     const { city_mpg, year, make, model, transmission, drive } = car;
-
+    const carRent = calculateCarRent(city_mpg, year)
   return (
     <div className='car-card group'>
       <div className='car-card__content'>
@@ -18,10 +19,10 @@ const CarCard = ({ car }: CarCardProps) => {
         </h2>
       </div>
 
-      <p>
-        <span>
-            Car Rent ...
-        </span>
+      <p className='flex mt-6 text-[32px] leading-[38px] font-extrabold'>
+        <span className='self-start text-[14px] leading-[17px] font-semibold'>$</span>
+        {carRent}
+        <span className='self-end text-[14px] leading-[17px] font-medium'>/day</span>
       </p>
     </div>
   )
