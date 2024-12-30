@@ -30,6 +30,26 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     </div>
                 </TransitionChild>
 
+                <div className='fixed inset-0 overflow-y-auto'>
+                    <div className='flex min-h-full items-center justify-center p-4 text-center'>
+                    <TransitionChild
+                        as={Fragment}
+                        enter='ease-out duration-300'
+                        enterFrom='opacity-0 scale-95'
+                        enterTo='opacity-100 scale-100'
+                        leave='ease-out duration-300'
+                        leaveFrom='opacity-100 scale-100'
+                        leaveTo='opacity-0 scale-95'
+                        >     
+
+                        <DialogPanel>
+                            
+                        </DialogPanel>
+
+                    </TransitionChild>
+                    </div>
+                </div>
+
                 {/* <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
                 <DialogPanel className="max-w-lg space-y-4 border bg-white p-12">
                     <DialogTitle className="font-bold">Deactivate account</DialogTitle>
@@ -41,7 +61,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     </div>
                 </DialogPanel>
                 </div> */}
-                
+
             </Dialog>
         </Transition>
       
