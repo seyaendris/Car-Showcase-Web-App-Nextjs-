@@ -88,6 +88,9 @@ const CarCard = ({ car }: CarCardProps) => {
 
       </div>
 
+      <CarDetails />
+
+
     </div>
   )
 }
