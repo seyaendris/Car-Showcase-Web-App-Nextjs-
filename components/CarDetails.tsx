@@ -16,12 +16,20 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   return (
     <>
         <Transition appear as={Fragment} show={isOpen}>
-            <Dialog as='div' open={isOpen} onClose={closeModal} className="relative z-50">
-                <TransitionChild>
-                    <div>
-
+            <Dialog as='div'  onClose={closeModal} className="relative z-50">
+                <TransitionChild
+                     as={Fragment}
+                     enter='ease-out duration-300'
+                     enterFrom='opacity-0'
+                     enterTo='opacity-100'
+                     leave='ease-in duration-200'
+                     leaveFrom='opacity-100'
+                     leaveTo='opacity-0'
+                    >
+                    <div className='fixed inset-0 bg-black bg-opacity-25'>
                     </div>
                 </TransitionChild>
+
                 {/* <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
                 <DialogPanel className="max-w-lg space-y-4 border bg-white p-12">
                     <DialogTitle className="font-bold">Deactivate account</DialogTitle>
@@ -33,6 +41,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     </div>
                 </DialogPanel>
                 </div> */}
+                
             </Dialog>
         </Transition>
       
