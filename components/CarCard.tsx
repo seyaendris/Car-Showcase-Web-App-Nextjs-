@@ -51,16 +51,16 @@ const CarCard = ({ car }: CarCardProps) => {
 
           <div className='flex flex-col justify-center items-center gap-2'>
             <Image 
-              src="/steering-wheel.svg"
-              alt='steering wheel'
+              src="/tire.svg"
+              alt='tire'
               width={20}
               height={20}
               />
               <p className='text-[14px]'>
-                { transmission === 'a' ? 'Automatic' : 'Manual' }
+                { drive.toUpperCase() }
               </p>
           </div>
-          
+
           <div className='flex flex-col justify-center items-center gap-2'>
             <Image 
               src="/steering-wheel.svg"
