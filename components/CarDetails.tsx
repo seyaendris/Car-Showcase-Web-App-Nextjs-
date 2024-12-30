@@ -5,6 +5,7 @@ import React, { Fragment } from 'react'
 import { Description, Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
 import { useState } from 'react'
 import { Transition } from '@headlessui/react'
+import Image from 'next/image'
 
 interface CarDetailsProps {
     isOpen: boolean,
@@ -42,8 +43,20 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                         leaveTo='opacity-0 scale-95'
                         >     
 
-                        <DialogPanel>
-                            
+                        <DialogPanel className='relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5'>
+                            <button
+                                type='button'
+                                onClick={closeModal}
+                                >
+                                    <Image 
+                                        src="/close.svg"
+                                        alt='close'
+                                        width={20}
+                                        height={20}
+                                        className='object-contain'
+                                        />
+                                
+                            </button>
                         </DialogPanel>
 
                     </TransitionChild>
