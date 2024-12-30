@@ -217,3 +217,12 @@
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
 /* END: search manufacturer styles */
+
+/* Hide scrollbar */
+.scrollbar-none {
+  scrollbar-width: none; /* For Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
