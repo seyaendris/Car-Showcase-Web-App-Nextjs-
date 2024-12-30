@@ -49,32 +49,32 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                 onClick={closeModal}
                                 className='absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full'
                                 >
-                                    <Image 
-                                        src="/close.svg"
-                                        alt='close'
-                                        width={20}
-                                        height={20}
-                                        className='object-contain'
-                                        />
-                                
+                                    <Image
+                                    src='/close.svg'
+                                    alt='close'
+                                    width={20}
+                                    height={20}
+                                    className='object-contain'
+                                />
                             </button>
+
+                            <div className='flex-1 flex flex-col gap-3'>
+                                <div  className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
+                                <Image 
+                                    src="/hero.png"
+                                    alt='car model'
+                                    fill
+                                    priority
+                                    className='object-contain'
+                                    />
+                                </div>
+                            </div>
+
                         </DialogPanel>
 
                     </TransitionChild>
                     </div>
                 </div>
-
-                {/* <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-                <DialogPanel className="max-w-lg space-y-4 border bg-white p-12">
-                    <DialogTitle className="font-bold">Deactivate account</DialogTitle>
-                    <Description>This will permanently deactivate your account</Description>
-                    <p>Are you sure you want to deactivate your account? All of your data will be permanently removed.</p>
-                    <div className="flex gap-4">
-                    <button onClick={() => setIsOpen(false)}>Cancel</button>
-                    <button onClick={() => setIsOpen(false)}>Deactivate</button>
-                    </div>
-                </DialogPanel>
-                </div> */}
 
             </Dialog>
         </Transition>
