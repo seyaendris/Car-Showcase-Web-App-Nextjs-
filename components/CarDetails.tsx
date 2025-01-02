@@ -7,11 +7,11 @@ import { useState } from 'react'
 import { Transition } from '@headlessui/react'
 import Image from 'next/image'
 
-// interface CarDetailsProps {
-//     isOpen: boolean,
-//     closeModal: () => void,
-//     car: CarProps,
-// }
+interface CarDetailsProps {
+    isOpen: boolean,
+    closeModal: () => void,
+    car: CarProps,
+}
 
 const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   return (
